@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- WD Lesson 3.3: 
+     How do we interact with an element on a web page?  -->
+
+<!-- Resources 
+    https://www.w3schools.com/js/js_htmldom_methods.asp 
+    https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+
+     YouTube Video Lesson
+     https://youtu.be/t2R9hOkM_ZU 
+-->
+<html>
+  <head>
+    <title>WD Lesson 3.3</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+
+    <!-- Challenge 4: Add a heading to the <div> below titling the images you have added -->
+    <div class="container banner">
+    <h1>The Cities Of The World</h1>
+      
+    </div>
+    
+    <!-- Challenge 1: Add five images each within it's own div like <div><img src="" ></div> to div with a class of gallery below  -->
+    <div class="container gallery">
+      <div><img onmouseover="canada()" src="https://media.cnn.com/api/v1/images/stellar/prod/140630124917-12-canada-most-beautiful-places.jpg"></div>
+      <div><img onmouseover="alaska()" src="https://entiretravel.imgix.net/getmedia/3356caef-4a4c-42e7-803f-64e7b127d91a/Alaska-Juneau-842x469.jpg"></div>
+      <div><img onmouseover="England()" src="https://t4.ftcdn.net/jpg/02/84/88/03/360_F_284880344_drcRa7TAow6riwp3pXdlJUlcmI5vvbbP.jpg"></div>
+      <div><img onmouseover="NewYork()" src="https://media.cntraveller.com/photos/64f4fc5f663208f83a21af16/master/pass/New%20York%20City_GettyImages-1347979016.jpg"></div>
+      <div><img onmouseover="Russia()" src="https://i.natgeofe.com/k/415419c5-3768-4c8f-8697-f90de7a6075b/russia-st-basils_16x9.jpg"></div>
+      
+    </div>
+    <!-- Challenge 3: For each image in the class gallery above, add onmouseover event that calls the 
+         corresponding function you create in script.js as part of Challenge 2.
+    -->
+    <div class="container alternate landmark">
+      <div id="highlight"></div>
+    </div>
+    <div id="footer" class="container">
+      NYC &copy; 2021
+    </div>
+
+  </body>
+</html>
