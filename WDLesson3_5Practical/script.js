@@ -4,10 +4,20 @@
       3) Display the results in the appropriate element
 */
 function recArea(){
+      let len = parseFloat(document.getElementById("l").value);
+      let wid = parseFloat(document.getElementById("w").value);
+      let op = document.getElementById("output");
+      let A = len * wid;
+      op.innerHTML = "Area= "+A;
 
 }
 
 function recPerimeter(){
+      let len = parseFloat(document.getElementById("l").value);
+      let wid = parseFloat(document.getElementById("w").value);
+      let op = document.getElementById("output");
+      let P = 2 * (len + wid);
+      op.innerHTML = "Perimiter= "+P;
 
 }
 
@@ -20,10 +30,20 @@ function recPerimeter(){
 let pi = 3.1415926;
 
 function cirArea(){
+      let len = parseFloat(document.getElementById("l").value);
+      let wid = parseFloat(document.getElementById("w").value);
+      let op = document.getElementById("output");
+      let A = len * wid;
+      op.innerHTML = "Area= "+A;
 
 }
 
 function cirPerimeter(){
+      let len = parseFloat(document.getElementById("l").value);
+      let wid = parseFloat(document.getElementById("w").value);
+      let op = document.getElementById("output");
+      let P = 2 * (len + wid);
+      op.innerHTML = "Perimiter= "+P;
 
 }
 
@@ -33,9 +53,22 @@ function cirPerimeter(){
       3) Display the results in the appropriate element
 */
 function triArea(){
+      let len = parseFloat(document.getElementById("l").value);
+      let wid = parseFloat(document.getElementById("w").value);
+      let op = document.getElementById("output");
+      let A = len * wid;
+      op.innerHTML = "Area= "+A;
+
 
 }
 
 function triPerimeter(){
+       let len = parseFloat(document.getElementById("l").value);
+      let wid = parseFloat(document.getElementById("w").value);
+      let op = document.getElementById("output");
+      let P = 2 * (len + wid);
+      op.innerHTML = "Perimiter= "+P;
+
+}
 
 }
