@@ -30,17 +30,15 @@ function recPerimeter(){
 let pi = 3.1415926;
 
 function cirArea(){
-      let len = parseFloat(document.getElementById("l").value);
-      let wid = parseFloat(document.getElementById("w").value);
+      let r = parseFloat(document.getElementById("rad").value);
       let op = document.getElementById("output");
-      let A = len * wid;
-      op.innerHTML = "Area= "+A;
+      let A = pi * (r**2);
+      op.innerHTML = "Area of circle is:"+A;
 
 }
 
 function cirPerimeter(){
       let len = parseFloat(document.getElementById("l").value);
-      let wid = parseFloat(document.getElementById("w").value);
       let op = document.getElementById("output");
       let P = 2 * (len + wid);
       op.innerHTML = "Perimiter= "+P;
@@ -68,7 +66,5 @@ function triPerimeter(){
       let op = document.getElementById("output");
       let P = 2 * (len + wid);
       op.innerHTML = "Perimiter= "+P;
-
-}
 
 }
