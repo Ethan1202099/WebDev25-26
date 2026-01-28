@@ -19,6 +19,19 @@
       2) Perform the necessary calculations
       3) Display the results in the appropriate element
 */
+      function calcDist(){
+      let P=parseFloat(document.getElementById("P").value);
+      let R=parseFloat(document.getElementById("R").value);
+      let N=parseFloat(document.getElementById("N").value);
+      let T=parseFloat(document.getElementById("T").value);
+      let output = document.getElementById("output");
+      
+      let a = p * Math.pow(1 + (r/100)/n, n*t);
+      //a = a.toFixed(2);
+
+      output.innerHTML = `An investment of ${P} at ${R}% annual interest will grow to ${a.toFixed(2)} after ${T} years.`
+      }
+
 
 
 
