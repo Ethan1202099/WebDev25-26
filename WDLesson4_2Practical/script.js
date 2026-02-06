@@ -12,10 +12,20 @@ function name(){
 }
 */
 
-/* Challenge 2:  Create the function for Challenge 1 scenario */
+//* Challenge 2:  Create the function for Challenge 1 scenario */
+function area(){
+  let length = parseFloat(document.getElementById("length").value);
+  let width = parseFloat(document.getElementById("width").value);
+  let output = document.getElementById("areaOutput");
+  let Area = length * width;
 
-
-
+  if (length <= 0 || width <= 0){
+    message="Inappropriate measurement";
+  }else{
+    message='Area: ${Area}';
+  }
+  output.innerHTML = message;
+}
 /* Challenge 3:  Complete the function for Pets Challenge on pets.html.  
 1) Review the HTML for the UI.  Remember dropdown boxes are just input.
 2) You will need to write HTML as part of the output.  
