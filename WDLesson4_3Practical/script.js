@@ -3,6 +3,13 @@
        2) Display BMI status as per the chart in index.html
        3) Display the corresponding image based on the BMI status.
 */
+function calcBMI(){
+       let height = document.getElementById("height").value;
+       let weight = document.getElementById("weight").value;
+       let bmi = (703 * weight) / (height * height);
+       let op = document.getElementById("output");
+       let filename = "";
+}
 /* 
 Guideline:
 1) Create the function
