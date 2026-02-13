@@ -4,10 +4,10 @@
        3) Display the corresponding image based on the BMI status.
 */
 function calcBMI(){
-       let height = document.getElementById("height").value;
-       let weight = document.getElementById("weight").value;
-       let bmi = (703 * weight) / (height * height);
+       let h = parseFloat( document.getElementById("h").value);
+       let w = parseFloat( document.getElementById("w").value);
        let op = document.getElementById("output");
+       let bmi = 703 * w / (h**2);
        let filename = "";
        if(bmi < 18.5){
               filename = "Underweight";
