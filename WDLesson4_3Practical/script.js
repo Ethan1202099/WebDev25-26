@@ -9,6 +9,18 @@ function calcBMI(){
        let bmi = (703 * weight) / (height * height);
        let op = document.getElementById("output");
        let filename = "";
+       if(bmi < 18.5){
+              filename = "Underweight";
+       }
+       else if(bmi >= 18.5 && bmi <= 24.9){
+              filename = "Healthy Weight";
+       }
+       else if(bmi >= 25.0 && bmi <= 29.9){
+              filename = "Overweight";
+       }
+       else if(bmi >= 30.0){
+              filename = "Obesity";
+       }
 }
 /* 
 Guideline:
