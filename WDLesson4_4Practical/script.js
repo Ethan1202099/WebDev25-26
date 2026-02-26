@@ -6,10 +6,14 @@
 */
 let correct;
 function generateProblem(){
-
+       let span = document.getElementById("problem");
+       let num1 = Math.floor(Math.random() * 21);
+       let num2 = Math.floor(Math.random() * 21);
+       correct = num1 + num2;
+       span.innerHTML = `What is ${num1} + ${num2}?`
 }
 
-/* Challenge 3: Complete the function checkProblem by ,
+/* Challenge 3: Complete the function checkResponse by ,
        1) Create a variable for the users response
        2) Create a variable for the <div> with id of output
        3) Create a variable msg for the output
@@ -18,8 +22,10 @@ function generateProblem(){
            b) otherwise set msg to "Incorrect. The answer is " followed by the correct answer.  Also include incorrect image
        4) Display msg in the output
 */
-function checkProblem(){
-
+function checkResponse(){
+       let response = document.getElementById("response")
+       let output = document.getElementById("output")
+       let msg = "";      
 }
 
 
