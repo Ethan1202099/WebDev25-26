@@ -14,15 +14,16 @@ Year N: $xxxxxx
 */
 
 function calculate(){
+    let output = document.getElementById("output");
     let P = parseFloat(document.getElementById("p").value);
-    let R = parseFloat(document.getElementById("r").value);
-    let N = parseInt(document.getElementById("n").value);
+    let r = parseFloat(document.getElementById("r").value);
+    let n = parseInt(document.getElementById("n").value);
     let yrs = parseInt(document.getElementById("t").value);
-    let build = "";
+    let build = `<h3>Yearly Balances</h3>`;
 
-    for(let t = 0; t <= yrs; t++){
-        let A = p * (1 + r/n)**(n*t);
-        build += `year ${t}: $${A.toFixed(2)} <br>`;
+    for(let t = 0; t <= yrs; t += 1){
+        let A = P * Math.pow(1 + r/n, n*t);
+        build += `Year ${t}: $${A.toFixed(2)} <br>`;
     }
 
     output.innerHTML = build;
