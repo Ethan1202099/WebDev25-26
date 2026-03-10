@@ -15,8 +15,4 @@ Now that you have the template, use a for loop to produce all five pizza cards.
 // Go to style.css for Challenge 3
 
 //init() function is called when the page loads in index.html
-function init(){
-  
-
-}
 
