@@ -1,4 +1,4 @@
-/* Challenge: Complete the Compound Interest Calculator
++/* Challenge: Complete the Compound Interest Calculator
         1) Retrieve and store all the information in appropriate values. 
            Note: Typically user enter rates as percentages.  Divide the value retrieved by 100.
                  Remember principals and rates have decimals.
@@ -11,6 +11,11 @@
 */
 
 function balance(){
+    let P = parseFloat(document.getElementById('p').value);
+    let r = parseFloat(document.getElementById('r').value) / 100; 
+    let t = parseInt(document.getElementById('t').value);
+    let build = `<table><tr><th>Year</th><th>Balance</th></tr></table> `;
+
 
 
 }
