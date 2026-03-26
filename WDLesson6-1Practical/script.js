@@ -7,7 +7,7 @@ Challenge 1: Add the appropriate images to each array below from the list of ima
 //Challenge 3: Add appropriate titles for each food in their corresponding array. Use the image names as a hint for the food title.
 
 let meat_images = ["steak.jpg", "brisket.jpg", "ribeye.jpg", "beeftips.jpg"];
-let meat_prices = [9.99, 9.99, 9.99];
+let meat_prices = [9.99, 9.99, 9.99, 9.99];
 let meat_titles = ["Steak", "Brisket", "Ribeye", "Beeftips"];
 
 let seafood_images = ["clams.jpg", "crabs.jpg", "lobster.png", "tuna.jpg", "shrimp.jpg", "scallops.jpg"];
@@ -32,6 +32,7 @@ function init(){
   */
 
   //Challenge 4:  Build cards for the meats. Place the build in the meat container. 
+  build = "";
   for (let i = 0; i < meat_images.length;i++){
     build +=`<div class="card">
                   <h2>"${meat_titles[i]}"</h2>
@@ -41,6 +42,7 @@ function init(){
   }
   m.innerHTML = build;
   //Challenge 5:  Build cards for the seafoods. Place the build in the seafood container.
+  build = "";
    for (let i = 0; i < seafood_images.length;i++){
     build +=`<div class="card">
                   <h2>"${seafood_titles[i]}"</h2>
@@ -50,6 +52,7 @@ function init(){
   }
   s.innerHTML = build;
   //Challenge 6:  Build cards for the desserts. Place the build in the dessert container.
+  build = "";
    for (let i = 0; i < dessert_images.length;i++){
     build +=`<div class="card">
                   <h2>"${dessert_titles[i]}"</h2>
