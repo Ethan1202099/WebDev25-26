@@ -10,7 +10,7 @@ function BHS(){
   let build = "";
   build += `<div class = "card">
     <h3>"${school.name}"</h3>
-    <img src="${school.name}"></img>
+    <img src="${school.image}"></img>
     <h3>"${school.address}"</h3>
   </div>`
 output.innerHTML = build;
