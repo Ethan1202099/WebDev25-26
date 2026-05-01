@@ -1,87 +1,86 @@
 let data, info;
 
-async function init(){   
-  let link = "311.json"; //let link = "https://data.cityofnewyork.us/resource/erm2-nwe9.json?$limit=1000";
-  info = await fetch(link);
-  data = await info.json();
-  
-  let output = document.getElementById("output");
-  let build = "";
-
-  for(let i = 0; i < data.length; i+=1){
-    let complaint = data[i];
-    build += `<div class="fitted card">
-                 <h3>${complaint.complaint_type}</h3>
-                 <hr>
-                 <p>${complaint.borough}</p>
-                 <p>${complaint.incident_zip}</p>
-                 <p>${complaint.descriptor}</p>
-                 <hr>
-                 <p>${complaint.created_date}</p>
-                 <hr>
-                 <p>${complaint.agency}</p>
-              </div>`    
-  }
-  output.innerHTML = build;
-}
-
-// Code below demonstrates the basic process to filter information by borough. Use this as a guide for Challenges 2 and 4 below.
-function filterByBorough(){
-  let output = document.getElementById("output");
-  let borough = document.getElementById("borough").value;
-  let result = document.getElementById("result");
-  
-  let build = "";
-  let ct = 0;
-
-  for(let i = 0; i < data.length; i+=1){
-    let complaint = data[i];
-    if(complaint.borough == borough){
-      build += `<div class="fitted card">
-                    <h3>${complaint.complaint_type}</h3>
-                    <hr>
-                    <p>${complaint.borough}</p>
-                    <p>${complaint.incident_zip}</p>
-                    <p>${complaint.descriptor}</p>
-                    <hr>
-                    <p>${complaint.created_date}</p>
-                    <hr>
-                    <p>${complaint.agency}</p>
-                </div>`;
-      ct += 1;
-    }
-  }
-  result.innerHTML = `${ct} Results found.`
-  output.innerHTML = build;
-}
-
-// Challenge 2: Create an event handler (function) to filter the 311 Service Request by zip code.
-function filterByZip(){
+async function init() {
+    let link = "https://data.cityofnewyork.us/resource/h9gi-nx95.json?$limit=200";
+    info = await fetch(link);
+    data = await info.json();
     let output = document.getElementById("output");
-    let zip = document.getElementById("ZipCode").value;
+    let build = "";
+
+    for (let i = 0; i < data.length; i++) {
+        let crash = data[i];
+        build += `<div class="fitted card">
+            <h3> ${crash.collision_id}</h3>
+            <hr>
+            <p>${crash.borough || "Borough"}</p>
+            <p>${crash.on_street_name || "N/A"}</p>
+            <hr>
+            <p>${crash.contributing_factor_vehicle_1 || "N/A"}</p>
+            <p>${crash.vehicle_type_code1 || "Sedan"}</p>
+            <p>${crash.number_of_persons_injured || "0"}</p>
+        </div>`;
+    }
+    output.innerHTML = build;
+}
+
+// Challenge 2: Filter by Zip Code
+function filterByZip() {
+    let output = document.getElementById("output");
+    let zip = document.getElementById("zip").value;
     let result = document.getElementById("result");
     let build = "";
     let ct = 0;
-}
 
-// Challenge 4: Create an event handler (function) to filter the 311 Service Request by complaint type.
-for (let i = 0; i < data.length; i += 1){
-        let complaint = data[i];
-        if (complaint.incident_zip == zip){
-            build += `<div class="card">
-                        <h3>${complaint.complaint_type}</h3>
-                        <hr>
-                        <p>${complaint.borough}</p>
-                        <p>${complaint.incident_zip}</p>
-                        <p>${complaint.descriptor}</p>
-                        <hr>
-                        <p>${complaint.created_date}</p>
-                        <hr>
-                        <p>${complaint.agency}</p>
-                      </div>`;
+    for (let i = 0; i < data.length; i++) {
+        let crash = data[i];
+        if (crash.zip_code == zip) {
+            build += `<div class="fitted card">
+                <h3> ${crash.collision_id}</h3>
+                <hr>
+                <p>${crash.borough || "N/A"}</p>
+                <p>${crash.on_street_name || "N/A"}</p>
+                <hr>
+                <p>${crash.contributing_factor_vehicle_1 || "N/A"}</p>
+                <p>${crash.vehicle_type_code1 || "N/A"}</p>
+                <p>${crash.number_of_persons_injured || "0"}</p>
+            </div>`;
             ct += 1;
         }
     }
-    result.innerHTML = `${ct} Results found.`;
+    result.innerHTML = `${ct} Results found for Zip Code ${zip}.`;
     output.innerHTML = build;
+}
 
+// Challenge 4: Filter by Crash Type (Contributing Factor)
+function filterByCrash() {
+    let output = document.getElementById("output");
+    let result = document.getElementById("result");
+    let type = document.getElementById("crashType").value.toLowerCase();
+
+    let build = "";
+    let ct = 0;
+
+    for (let i = 0; i < data.length; i++) {
+        let crash = data[i];
+
+        if (
+            crash.contributing_factor_vehicle_1 &&
+            crash.contributing_factor_vehicle_1.toLowerCase().includes(type)
+        ) {
+            build += `<div class="fitted card">
+                <h3>${crash.collision_id}</h3>
+                <hr>
+                <p>${crash.borough || "N/A"}</p>
+                <p>${crash.on_street_name || "N/A"}</p>
+                <hr>
+                <p>${crash.contributing_factor_vehicle_1 || "N/A"}</p>
+                <p>${crash.vehicle_type_code1 || "N/A"}</p>
+                <p>${crash.number_of_persons_injured || "0"}</p>
+            </div>`;
+            ct++;
+        }
+    }
+
+    result.innerHTML = `${ct} Results found for "${type}".`;
+    output.innerHTML = build;
+}
