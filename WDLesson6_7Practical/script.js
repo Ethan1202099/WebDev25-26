@@ -62,7 +62,6 @@ function filterByCrash() {
 
     for (let i = 0; i < data.length; i++) {
         let crash = data[i];
-
         if (
             crash.contributing_factor_vehicle_1 &&
             crash.contributing_factor_vehicle_1.toLowerCase().includes(type)
