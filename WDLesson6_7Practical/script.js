@@ -31,7 +31,7 @@ function filterByZip() {
     let build = "";
     let ct = 0;
 
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++){
         let crash = data[i];
         if (crash.zip_code == zip) {
             build += `<div class="fitted card">
@@ -60,12 +60,12 @@ function filterByCrash() {
     let build = "";
     let ct = 0;
 
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++){
         let crash = data[i];
         if (
             crash.contributing_factor_vehicle_1 &&
             crash.contributing_factor_vehicle_1.toLowerCase().includes(type)
-        ) {
+ ) {
             build += `<div class="fitted card">
                 <h3>${crash.collision_id}</h3>
                 <hr>
@@ -80,6 +80,6 @@ function filterByCrash() {
         }
     }
 
-    result.innerHTML = `${ct} Results found for "${type}".`;
+    result.innerHTML = `${ct} Results found for "${type}"`;
     output.innerHTML = build;
 }
