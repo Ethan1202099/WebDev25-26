@@ -13,8 +13,9 @@ async function init(){
   let ct = 0;
 
   //Challenge 2: Test the function card() developed in Challenge 1 by displaying only the first violation to the webpage.
-  let firstviolation = data[0];
-  build += card(firstviolation);
+  // let firstviolation = data[0];
+  // build += card(firstviolation);
+  // ct++;
 
   //Challenge 3: Display all the violations to the web page using the function card().
   for(let i = 0; i < data.length; i++){
